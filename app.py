@@ -1,8 +1,9 @@
+# importing the libraries needed for the project
 import psycopg2
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 
-
+# Initialise the App
 app = Flask(__name__)
 
 
@@ -37,7 +38,7 @@ class Feedback(db.Model):
         self.comments = comments
 
 
-
+# creating the routes 
 @app.route('/')
 def land():
     return render_template('landing.html')
